@@ -1,127 +1,116 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>WWIV Bulletin Board System</title>
-<style>
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #222;
-}
-.navhead { text-align: left;}
-</style>
-<script>
+    <head>
+        <meta charset="UTF-8">
+        <title>WWIV Bulletin Board System</title>
+        <style>
+        body {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.4;
+          color: #222;
+        }
+        .navhead { text-align: left;}
+        </style>
+        <script>
 
-function loadXMLDoc(url) {
-  	var xhttp=new XMLHttpRequest();
-	xhttp.open("GET", url, false);
-	xhttp.send();
-	var xmlDoc = xhttp.responseXML;
-	if (!xmlDoc) {
-		xmlDoc = (new DOMParser()).parseFromString(xhttp.responseText, 'text/xml');
-	}
-	return xmlDoc;
-}
+        function loadXMLDoc(url) {
+            var xhttp=new XMLHttpRequest();
+            xhttp.open("GET", url, false);
+            xhttp.send();
+            var xmlDoc = xhttp.responseXML;
+            if (!xmlDoc) {
+                xmlDoc = (new DOMParser()).parseFromString(xhttp.responseText, 'text/xml');
+            }
+            return xmlDoc;
+        }
 
-function parse(elem, xmlDoc) {
-  var items = xmlDoc.getElementsByTagName("item");
-  var result = "<hr />";
-  for (var i=0; i<Math.min(5, items.length); i++) {
-  	var item = items.item(i);
-  	var title = item.getElementsByTagName("title")[0].textContent;
-  	result += "<strong>" + title + "</strong><br/>";
-  	var description = item.getElementsByTagName("description")[0].textContent;
-  	result += description + "<br/>";
-  	var link = item.getElementsByTagName("link")[0].textContent
-  	result += '<a href="' + link + '">Read more</a>';
-  	result += "<hr />";
-  }
-  elem.innerHTML = result;
-}
+        function parse(elem, xmlDoc) {
+          var items = xmlDoc.getElementsByTagName("item");
+          var result = "<hr />";
+          for (var i=0; i<Math.min(5, items.length); i++) {
+            var item = items.item(i);
+            var title = item.getElementsByTagName("title")[0].textContent;
+            result += "<strong>" + title + "</strong><br/>";
+            var description = item.getElementsByTagName("description")[0].textContent;
+            result += description + "<br/>";
+            var link = item.getElementsByTagName("link")[0].textContent
+            result += '<a href="' + link + '">Read more</a>';
+            result += "<hr />";
+          }
+          elem.innerHTML = result;
+        }
 
-function start() {
-	var xmlnews = loadXMLDoc("wwiv.sf.net/cgi-bin/news.cgi");
-	var news=document.getElementById("news");
-	parse(news, xmlnews);
+        function start() {
+            var xmlnews = loadXMLDoc("wwiv.sf.net/cgi-bin/news.cgi");
+            var news=document.getElementById("news");
+            parse(news, xmlnews);
 
-	var xmlbugs = loadXMLDoc("wwiv.sf.net/cgi-bin/feed.cgi");
-	var bugs=document.getElementById("feed");
-	parse(bugs, xmlbugs);
-}
+            var xmlbugs = loadXMLDoc("wwiv.sf.net/cgi-bin/feed.cgi");
+            var bugs=document.getElementById("feed");
+            parse(bugs, xmlbugs);
+        }
 
-window.addEventListener("load", start, false);
+        window.addEventListener("load", start, false);
 
-</script>
+        </script>
 
-</head>
-<body>
-<div>
-  <div style="background-color:#cacaca;height:100%;width:200px;float:left;border-radius:25px; padding:10px; margin:10px;">
-    <h2 class="navhead">WWIV</h2>
-    <ul>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#screenshots">Screen Shots</a></li>
-      <li><a href="#download">Download</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#bugs">Recent Bug Updates</a></li>
-      <li><a href="https://github.com/wwivbbs/wwiv/wiki">WWIV Wiki</a></li>
-    </ul>      
-    <h2 class="navhead">Developers</h2>
-    <ul>
-      <li><a href="http://wwivbbs.github.io/">Project Home</a></li>
-      <li><a href="http://build.wwiv.us/job/WWIV/">Nightly Builds</a></li>
-      <li><a href="https://github.com/wwivbbs/wwiv">Source Code</a></li>
-      <!---li><a href="contributing.html">Contributing</a></li -->
-      <li><a href="https://github.com/wwivbbs/wwiv/wiki/license">License</a></li>
-      <li><a href="https://github.com/wwivbbs/wwiv/issues">Bug Reports</a></li>
-      <li><a href="https://github.com/wwivbbs/wwiv/labels/Feature">Feature Requests</a></li>
-    </ul>    
-  </div>
-
-
-  <div style="background-color: #EEEEEE; height: 100%; width: 700px; float: left; clear: right; border-radius: 25px; padding: 10px; margin: 10px; ">
-    <div style="text-align: center;">
-    <a name="overview"></a><img src="http://wwivbbs.github.io/images/WWIV_logo.jpg" width="400" height="150" alt=""/>
-    </div>
-    <h2>Overview</h2>
-        <p>WWIV is computer bulletin board system (BBS) originally
-          written in Basic, ported to Pascal, then to C and finally to C++. WWIV
-          v5 is released as open source under Apache License v2.0.</p>
-    <p>&nbsp;</p>
-    <h2><a name="features"></a>Features</h2>
-    <ul>
-      <li>File compatible with 4.3X</li>
-      <li>32-bit Win32 version.</li>
-      <li>Compiles and Runs on Linux.</li>
-      <li>Included GUI Telnet Server.</li>
-      <li>Internal Z-Modem</li>
-      <li>DOOR32.SYS support.</li>
-      <li>Uses the Synchronet FOSSIL Driver</li>
-    </ul
-    ><p>&nbsp;</p>
-    <h2><a name="screenshots"></a>Screen Shots</h2>
-    <p><img src="http://wwiv.sf.net/main.jpg" width="652" height="338"><br/><small>(Main Menu)</small></p>
-    <p>&nbsp;</p>
-    <h2><a name="download"></a>Download</h2>
-    <ul>
-      <li><a href="http://build.wwiv.us/job/WWIV/">Nightly Builds</a></li>
-	Download source to SBBSEXEC (GPL)</a></li>
-    </ul>    
-    <p>&nbsp;</p>
-
-    <h2><a name="#news"></a>Recent News</h2>
-    <div id="news">
-    </div>
-    <h2><a name="#news"></a>Recent Updates</h2>
-    <div id="feed">
-    </div>
-</div>
-</div>
-<div style="clear:both; margin:auto;">
-...
-</div>
-</body>
+    </head>
+    <body>
+        <div>
+          <div style="background-color:#cacaca;height:100%;width:200px;float:left;border-radius:25px; padding:10px; margin:10px;">
+            <h2 class="navhead">WWIV</h2>
+            <ul>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#screenshots">Screen Shots</a></li>
+              <li><a href="#download">Download</a></li>
+              <li><a href="https://github.com/wwivbbs/wwiv/wiki">WWIV Wiki</a></li>
+            </ul>      
+            <h2 class="navhead">Developers</h2>
+            <ul>
+              <li><a href="http://wwivbbs.github.io/">Project Home</a></li>
+              <li><a href="http://build.wwiv.us/job/WWIV/">Nightly Builds</a></li>
+              <li><a href="https://github.com/wwivbbs/wwiv">Source Code</a></li>
+              <!---li><a href="contributing.html">Contributing</a></li -->
+              <li><a href="https://github.com/wwivbbs/wwiv/wiki/license">License</a></li>
+              <li><a href="https://github.com/wwivbbs/wwiv/issues">Bug Reports</a></li>
+              <li><a href="https://github.com/wwivbbs/wwiv/labels/enhancement">Feature Requests</a></li>
+            </ul>    
+          </div>
+          
+          <div style="background-color: #EEEEEE; height: 100%; width: 700px; float: left; clear: right; border-radius: 25px; padding: 10px; margin: 10px; ">
+            <div style="text-align: center;">
+            <a name="overview"></a><img src="/images/WWIV_logo.jpg" width="400" height="150" alt=""/>
+            </div>
+            <h2>Overview</h2>
+                <p>WWIV is computer bulletin board system (BBS) originally
+                  written in Basic, ported to Pascal, then to C and finally to C++. WWIV
+                  v5 is released as open source under Apache License v2.0.</p>
+            <p>&nbsp;</p>
+            <h2><a name="features"></a>Features</h2>
+            <ul>
+              <li>File compatible with 4.3X</li>
+              <li>32-bit Win32 version.</li>
+              <li>Compiles and Runs on Linux.</li>
+              <li>Included GUI Telnet Server.</li>
+              <li>Internal Z-Modem</li>
+              <li>DOOR32.SYS support.</li>
+              <li>Uses the Synchronet FOSSIL Driver</li>
+            </ul
+            ><p>&nbsp;</p>
+            <h2><a name="screenshots"></a>Screen Shots</h2>
+            <p><img src="/images/WWIVBBSMainMenu.jpg" width="652" height="338"><br/><small>(Main Menu)</small></p>
+            <p>&nbsp;</p>
+            <h2><a name="download"></a>Download</h2>
+            <ul>
+              <li><a href="http://build.wwiv.us/job/WWIV/">Nightly Builds</a></li>
+                <li>Download source to SBBSEXEC (GPL)</a></li>
+            </ul>    
+        </div>
+        </div>
+        <div style="clear:both; margin:auto;">
+        ...
+        </div>
+    </body>
 </html>
