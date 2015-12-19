@@ -12,39 +12,6 @@
         }
         .navhead { text-align: left;}
         </style>
-        <script>
-
-        function loadXMLDoc(url) {
-            var xhttp=new XMLHttpRequest();
-            xhttp.open("GET", url, false);
-            xhttp.send();
-            var xmlDoc = xhttp.responseXML;
-            if (!xmlDoc) {
-                xmlDoc = (new DOMParser()).parseFromString(xhttp.responseText, 'text/xml');
-            }
-            return xmlDoc;
-        }
-
-        function parse(elem, xmlDoc) {
-          var items = xmlDoc.getElementsByTagName("item");
-          var result = "<hr />";
-          for (var i=0; i<Math.min(5, items.length); i++) {
-            var item = items.item(i);
-            var title = item.getElementsByTagName("title")[0].textContent;
-            result += "<strong>" + title + "</strong><br/>";
-            var description = item.getElementsByTagName("description")[0].textContent;
-            result += description + "<br/>";
-            var link = item.getElementsByTagName("link")[0].textContent
-            result += '<a href="' + link + '">Read more</a>';
-            result += "<hr />";
-          }
-          elem.innerHTML = result;
-        }
-        
-        window.addEventListener("load", start, false);
-
-        </script>
-
     </head>
     <body>
         <div>
@@ -76,25 +43,33 @@
             </div>
             <h2>Overview</h2>
                 <p>WWIV is computer bulletin board system (BBS) originally
-                  written in Basic, ported to Pascal, then to C and finally to C++. WWIV
-                  v5 is released as open source under Apache License v2.0.</p>
+                  written in Basic, ported to Pascal, C and now C++. 
+                  WWIV v5 is Open Source released under the Apache License version v2.0.</p>
             <img src="/images/WWIVBBSMainMenu.jpg" width="652" height="338">
             <h2><a name="features"></a>Features</h2>
             <ul>
               <li>File compatible with 4.3X</li>
               <li>32-bit Win32 version.</li>
-              <li>Compiles and Runs on Linux.</li>
-              <li>Included GUI Telnet Server.</li>
+              <li>Linux version.</li>
+              <li>Includes GUI Telnet Server.</li>
+              <li>Includes WWIVNet Support.</li>
               <li>Internal Z-Modem</li>
+              <li>Internal QWK</li>
               <li>DOOR32.SYS support.</li>
-              <li>Uses the Synchronet FOSSIL Driver</li>
+              <li>Supports the Synchronet FOSSIL Driver</li>
             </ul>
-            <h2><a name="download"></a>Download</h2>
+            <h2><a name="download"></a>Download Current Release</h2>
             <ul>
               <li><a href="http://wwivbbs.readthedocs.org/en/latest/#get-wwiv-50">Download and Install WWIV 5.0.0</a></li>
             </ul>    
+            <h2><a name="contribute"></a>Contribute</h2>
+            <p>
+                WWIV is Open Source software developed on GitHub.<br>  
+                Contribute at <a href="https://github.com/wwivbbs/wwiv">github.com/wwiv</a>.
+                Download the latest builds from our <a href="https://build.wwivbbs.org/jenkins/">WWIV Jenkins Server.</a>
+            </p>
             <h2><a name="IRC"></a>Join us on IRC</h2>
-            <p>The dev team and fellow SysOps hangs out on IRC at: <br/>
+            <p>The development team and fellow SysOps hang out on IRC at: <br/>
             <ul>
             <li>Server: irc.wwivbbs.org:6667</li>
             <li>Channel: #WWIV</li>
