@@ -1,75 +1,82 @@
+
 <!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>WWIV Bulletin Board System</title>
-        <style>
-        body {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 16px;
-          line-height: 1.4;
-          color: #222;
-        }
-        .navhead { text-align: left;}
-        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div>
-          <div style="background-color:#cacaca;height:100%;width:200px;float:left;border-radius:25px; padding:10px; margin:10px;">
-            <h2 class="navhead">WWIV</h2>
-            <ul>
-              <li><a href="#overview">Overview</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#download">Download</a></li>
-              <li><a href="https://wwivbbs.readthedocs.org">WWIV Documentation</a></li>
-              
-            </ul>      
-            <h2 class="navhead">Developers</h2>
-            <ul>
-              <li><a href='https://build.wwivbbs.org/jenkins/job/wwiv/'><img src='https://build.wwivbbs.org/jenkins/buildStatus/icon?job=wwiv'></a></li>
-              <li><a href="#IRC">Join us on IRC</a></li>
-              <li><a href="http://www.wwivbbs.org/">Project Home</a></li>
-              <li><a href="https://build.wwivbbs.org/jenkins/">Nightly Builds</a></li>
-              <li><a href="https://github.com/wwivbbs/wwiv">Source Code</a></li>
-              <li><a href="http://wwivbbs.readthedocs.org/en/latest/license/">License</a></li>
-              <li><a href="https://github.com/wwivbbs/wwiv/issues">Bug Reports</a></li>
-              <li><a href="https://github.com/wwivbbs/wwiv/labels/enhancement">Feature Requests</a></li>
-            </ul>    
-          </div>
-          
-          <div style="background-color: #EEEEEE; height: 100%; width: 700px; float: left; clear: right; 
-          border-radius: 25px; padding: 10px; margin: 10px; ">
-            <div style="text-align: center;">
-            <a name="overview"></a><img src="/images/WWIV_logo.jpg" width="400" height="150" alt=""/>
-            </div>
-            <h2>Overview</h2>
-                <p>WWIV is computer bulletin board system (BBS) originally
-                  written in Basic, ported to Pascal, C and now C++. 
-                  WWIV v5 is Open Source released under the Apache License version v2.0.</p>
-            <img src="/images/WWIVBBSMainMenu.jpg" width="652" height="338">
-            <h2><a name="features"></a>Features</h2>
-            <ul>
-              <li>File compatible with 4.3X</li>
-              <li>32-bit Win32 version.</li>
-              <li>Linux version.</li>
-              <li>Includes GUI Telnet Server.</li>
-              <li>Includes WWIVNet Support.</li>
-              <li>Internal Z-Modem</li>
-              <li>Internal QWK</li>
-              <li>DOOR32.SYS support.</li>
-              <li>Supports the Synchronet FOSSIL Driver</li>
-            </ul>
-            <h2><a name="download"></a>Download Current Release</h2>
-            <ul>
-              <li><a href="http://wwivbbs.readthedocs.org/en/latest/#get-wwiv-50">Download and Install WWIV 5.0.0</a></li>
-            </ul>    
-            <h2><a name="contribute"></a>Contribute</h2>
-            <p>
-                WWIV is Open Source software developed on GitHub.<br>  
-                Contribute at <a href="https://github.com/wwivbbs/wwiv">github.com/wwiv</a>.
-                Download the latest builds from our <a href="https://build.wwivbbs.org/jenkins/">WWIV Jenkins Server.</a>
-            </p>
-            <h2><a name="IRC"></a>Join us on IRC</h2>
+<div class="container">
+  <div class="jumbotron" style="text-align:center" >
+    <h1>WWIV Bulletin Board Software</h1>
+    <p>
+    <img src="images/WWIV_logo.jpg" width="400" height="150" alt="" class="img-rounded"/>
+    </p><p>
+    <img src="images/WWIVBBSMainMenu.jpg" width="652" height="338">
+	</p>
+    <p>WWIV is computer bulletin board system (BBS) originally
+    written in Basic, ported to Pascal, C and now C++. 
+    WWIV v5 is Open Source released under the Apache License version v2.0.</p>
+  </div>
+  <div class="row">
+
+    <div class="col-md-4	">
+      <h3>Get WWIV</h3>
+      <p>
+      <a href="https://wwivbbs.readthedocs.org">WWIV Documentation</a></li></p>
+      <p><a href="http://wwivbbs.readthedocs.org/en/latest/#get-wwiv-50">Download and Install WWIV 5.0.0</a></p>
+    </div>
+
+
+    <div class="col-md-8">
+      <h3>Features</h3>
+        <p><ul>
+          <li>File compatible with 4.3X</li>
+          <li>32-bit Win32 version.</li>
+          <li>Linux version.</li>
+          <li>Includes GUI Telnet Server.</li>
+          <li>Includes WWIVNet Support.</li>
+          <li>Internal Z-Modem</li>
+          <li>Internal QWK</li>
+          <li>DOOR32.SYS support.</li>
+          <li>Supports the Synchronet FOSSIL Driver</li>
+        </ul>
+        </p>
+    </div>
+
+
+  </div>
+  <div class="row">
+
+    <div class="col-md-4">
+      <h3>Developers</h3>
+      <p>
+        <ul>
+          <li><a href='https://build.wwivbbs.org/jenkins/job/wwiv/'><img src='https://build.wwivbbs.org/jenkins/buildStatus/icon?job=wwiv'></a></li>
+          <li><a href="#IRC">Join us on IRC</a></li>
+          <li><a href="https://build.wwivbbs.org/jenkins/">Nightly Builds</a></li>
+          <li><a href="https://github.com/wwivbbs/wwiv">GitHub Project</a></li>
+          <li><a href="http://wwivbbs.readthedocs.org/en/latest/license/">License</a></li>
+          <li><a href="https://github.com/wwivbbs/wwiv/issues">Bug Reports</a></li>
+          <li><a href="https://github.com/wwivbbs/wwiv/labels/enhancement">Feature Requests</a></li>
+        </ul>    
+    </p>
+    </div>
+
+    <div class="col-md-8">
+    	<h3>Contribute</h3>
+	    <p>
+        WWIV is Open Source software developed on GitHub.<br>  
+        Contribute at <a href="https://github.com/wwivbbs/wwiv">github.com/wwiv</a>.
+        Download the latest builds from our <a href="https://build.wwivbbs.org/jenkins/">WWIV Jenkins Server.</a>
+        </p>
+        <p>
+            <h4><a name="IRC"></a>Join us on IRC</h4>
             <p>The development team and fellow SysOps hang out on IRC at: <br/>
             <ul>
             <li>Server: irc.wwivbbs.org:6667</li>
@@ -78,10 +85,10 @@
             </ul>
             </p>
             <p>For IRC logs and stats check out <a href="http://venomslair.com/irc.php" taget=_new>Venom's Lair IRC Page</a></p>
-        </div>
-        </div>
-        <div style="clear:both; margin:auto;">
-        ...
-        </div>
+		</p>        
+	</div>
+  </div>
+  
+</div>    
     </body>
 </html>
