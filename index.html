@@ -1,62 +1,109 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>WWIV BBS Software by wwivbbs</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WWIV Bulletin Board Software</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">WWIV</a> </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">About <span class="sr-only">(current)</span></a> </li>
+        <li><a href="http://docs.wwivbbs.org/en/latest">Documentation</a> </li>
+        <li><a href="#downloads">Downloads</a> </li>
+        <li> </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/wwivbbs/wwiv">GitHub</a> </li>
+        <li><a href="https://github.com/wwivbbs/wwiv/issues">Issue Tracker</a> </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="jumbotron">
+        <h1 class="text-center">WWIV BBS Software</h1>
+        <div class="row">
+          <div class="col-lg-2 col-lg-offset-4 col-md-offset-4 col-md-2 col-sm-offset-3 col-sm-3 col-xs-offset-3 col-xs-3">
+            <p><a class="btn btn-success btn-lg" href="#" role="button">Download</a></p>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a></p>
+          </div>
+        </div>
+        <p class="text-center">WWIV is computer bulletin board system (BBS) originally written in Basic, ported to Pascal, C and finally C++. </p>
+        <p class="text-center">WWIV v5 is Open Source released under the Apache License version v2.0.</p>
+        <img src="http://www.wwivbbs.org/images/WWIV_logo.jpg" alt="" width="1200" class="img-responsive"> </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="text-center col-sm-6">
+      <h3>Main Features</h3>
+		<p>
+        Drop-in compatible with 4.3 or later<br/>
+        32-bit Win32 version<br/>
+        32-bit and 64-bit Linux version<br/>
+        Telnet/SSH Server with blacklisting support<br/>
+        Internal X/Y/Z-Modem protocol support<br/>
+        Internal QWK support<br/>
+        Native WWIVnet networking included<br/>
+        FidoNet (FTN) networking support via WWIVtoss<br/>
+        DOOR32.SYS support<br/>
+        Works with SynchroNet FOSSIL driver or DOSBOX for door support.<br/>
+      </p>
+    </div>
+    <div class="text-center col-sm-6">
+      <h3 id="downloads">Downloads</h3>
+      <p>
+        <a href="https://build.wwivbbs.org/jenkins/job/wwiv_5.1/label=windows/lastSuccessfulBuild/artifact/">
+        WWIV 5.1 (stable)
+        </a><br/>
+        <a href="https://build.wwivbbs.org/jenkins/job/wwiv_5.0.0/label=windows/lastSuccessfulBuild/artifact/">
+        WWIV 5.0 (archived)
+        </a><br/>
+        <a href="https://build.wwivbbs.org/jenkins/job/wwiv_5.1/label=windows/lastSuccessfulBuild/artifact/">
+        WWIV 5.2 (unstable)
+        </a><br/>
+        </p>
+    </div>
+    <div class="text-center col-sm-6">
+      <h3>Links</h3>
+      <ul>
+        <a href="http://docs.wwivbbs.org/en/stable">WWIV 5.0 Documentation</a><br/>
+        <a href="http://docs.wwivbbs.org/en/latest">WWIV 5.1 Documentation</a><br/>
+        <a href="./wwivnews">WWIVnews Archives</a><br/>
+        <a href="http://docs.wwivbbs.org/en/latest/wwiv_bbs_list/">WWIV BBS List</a><br/>
+        <a href="http://docs.wwivbbs.org/en/stable/#get-wwiv-50">Download and Install WWIV 5.0</a><br/>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>WWIV BBS Software</h1>
-        <p>WWIV is computer bulletin board system (BBS) originally written in Basic, ported to Pascal, C and now C++. WWIV v5 is Open Source released under the Apache License version v2.0.</p>
-        <p class="view"><a href="https://github.com/wwivbbs">View the Project on GitHub <small>wwivbbs</small></a></p>
-        <ul>
-          <li class="single"><a href="https://github.com/wwivbbs/wwivbbs.github.io">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <p><img src="http://www.wwivbbs.org/images/WWIV_logo.jpg" alt="Logo">
-<img src="http://www.wwivbbs.org/images/WWIVBBSMainMenu.jpg" alt="MainMenu"></p>
 
-<h3>
-<a id="wwiv" class="anchor" href="#wwiv" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WWIV</h3>
-
-<ul>
-<li><a href="http://docs.wwivbbs.org/en/stable">WWIV 5.0 Documentation</a></li>
-<li><a href="http://docs.wwivbbs.org/en/latest">WWIV 5.1 Documentation</a></li>
-<li><a href="./wwivnews">WWIVnews Archives</a></li>
-<li><a href="http://docs.wwivbbs.org/en/latest/wwiv_bbs_list/">WWIV BBS List</a></li>
-<li><a href="http://docs.wwivbbs.org/en/stable/#get-wwiv-50">Download and Install WWIV 5.0</a></li>
-</ul>
-
-<h3>
-<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h3>
-
-<ul>
-<li>File compatible with 4.3</li>
-<li>32-bit Win32 version</li>
-<li>Linux version</li>
-<li>Includes GUI Telnet Server</li>
-<li>Includes WWIVNet Support</li>
-<li>Internal Z-Modem</li>
-<li>Internal QWK</li>
-<li>DOOR32.SYS support</li>
-<li>Supports the Synchronet FOSSIL Driver</li>
-</ul>
-
-<h3>
-<a id="developers" class="anchor" href="#developers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developers</h3>
-
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Developers</h2>
+      <p>
 <ul>
 <li><a href="https://build.wwivbbs.org/jenkins/job/wwiv/"><img src="https://build.wwivbbs.org/jenkins/buildStatus/icon?job=wwiv"></a></li>
 <li><a href="https://build.wwivbbs.org/jenkins/">Nightly Builds</a></li>
@@ -65,16 +112,21 @@
 <li><a href="https://github.com/wwivbbs/wwiv/issues">Bug Reports</a></li>
 <li><a href="https://github.com/wwivbbs/wwiv/labels/enhancement">Feature Requests</a></li>
 </ul>
-
-<h3>
-<a id="contribute" class="anchor" href="#contribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribute</h3>
-
+      </p>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <h2><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Contribute</h2>
+      <p>
 <p>WWIV is Open Source software developed on GitHub.</p>
 
 <p>Contribute at <a href="https://github.com/wwivbbs/wwiv">github.com/wwiv</a>.
 Download the latest builds from our <a href="https://build.wwivbbs.org/jenkins/">WWIV Jenkins Server</a></p>
-
-<h4>
+      
+      </p>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <h2><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Connect</h2>
+      <p>
 <a id="join-us-on-irc" class="anchor" href="#join-us-on-irc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Join us on IRC</h4>
 
 <p>The development team and fellow SysOps hang out on IRC at the following server:</p>
@@ -104,17 +156,56 @@ Download the latest builds from our <a href="https://build.wwivbbs.org/jenkins/"
 <li>For IRC logs and stats check out <a href="http://venomslair.com/irc.php">Venom's Lair IRC Page</a>
 </li>
 </ul>
-
-<h3>
-<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h3>
-
-<p>WWIV is Open Source Software and is Copyright © 2015 WWIV Software Services.</p>
-      </section>
+      
+      </p>
     </div>
-    <footer>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+  </div>
+</div>
+<hr/>
+
+<!--
+
+<div class="container">
+  <h1>Screen Shots </h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="thumbnail"> <img src="images/WWIVBBSMainMenu.jpg" alt="Thumbnail Image 1" class="img-responsive">
+        <div class="caption">
+          <h3>Feature</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, at.</p>
+          <hr>
+          <p><a href="#" class="btn btn-success" role="button">Button</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="thumbnail"> <img src="images/600X300.gif" alt="Thumbnail Image 1" class="img-responsive">
+        <div class="caption">
+          <h3>Feature</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, atque.</p>
+          <hr>
+          <p><a href="#" class="btn btn-success" role="button">Button</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+-->
+<hr>
+<hr>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © 2016, WWIV Software Services. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
 </html>
