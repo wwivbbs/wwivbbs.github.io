@@ -55,21 +55,13 @@
     <a class="btn btn-secondary btn-lg" href="http://docs.wwivbbs.org/en/latest" role="button">Documentation</a>
   </div>
 
-<div class="container-fluid">
-  <p></p>
-  <p></p>
-  <img src="http://www.wwivbbs.org/images/WWIV_logo.jpg" alt="" class="d-block mx-auto img-fluid" style="width: 100%">
-  <p></p>
-  <p></p>
-</div>
+<div class="container-fluid"> <img src="http://www.wwivbbs.org/images/WWIV_logo.jpg" alt="" class="d-block mx-auto img-fluid" style="width: 100%">  </div>
 <div class="row">
 	<div class="col"></div>
 	<div class="col-sm text-center">
-	  <p/>
-	  <p>WWIV is computer bulletin board system (BBS) originally written in Basic, ported to Pascal, C and finally C++. </p>
+<p>WWIV is computer bulletin board system (BBS) originally written in Basic, ported to Pascal, C and finally C++. </p>
 	  <p>WWIV v5 is Open Source released under the Apache License version v2.0.</p>
-	  <p/>
-	</div>
+</div>
 	<div class="col"></div>
 </div>
 </div>
@@ -127,6 +119,68 @@
 
 <div class="container">
    <h2><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> News</h2>
+<!--- Template for new items
+   <div class="row">
+    <div class="col-md-11 center-block">
+    	<h3>June 10, 2018</h3>
+    	<hr/>
+      <hr/>
+    </div>
+  </div>
+--->
+   <div class="row">
+    <div class="col-md-11 center-block">
+		<h3>July 3, 2018</h3>
+		<hr/>
+		WWIV 5.3 is now Generally Available.<br/>
+	    New features include:
+	   <ul>
+		<li>wwivd- Replaces wwivserver and is consistent on all platforms.</li>
+		<li>wwivd now offers fakemailer mode and is now has (mostly) feature parity
+  with wwivserver.exe on windows.  wwivserver.exe is deprecated
+  with the 5.3 release and will be removed for 5.4
+									   </li>
+		<li>INIT has been renamed to WWIVCONFIG.  Please delete init.exe or
+  ./init when you upgrade to 5.3
+- wwivutil dump will now display control characters (like [^A]
+  for control-A)
+</li>
+		<li> wwivconfig has some new parameters for how it works with 4.x
+  WWIV installs.  --4xx will launch a menu with only the items
+  that work with 4.x (like wwivd editor and network.json editor)
+  run "wwivconfig --help" for the latest list of command-line parameters.
+						 </li>
+		<li>**!!*!*!*! You need to update the outbound sub by recreating the
+  network node it's under in subedit (J, then M, then the letter, usually
+  A, then retype the echo tag, or just edit data/subs.json and replace
+  32675 with 32765 everywhere prettymuch (it's under host section))</li>
+		<li>WWIVbasic interpreter is available.  The menu command is
+  "RUNBASIC".  Also you can run a script from the logon event
+  by using @basic:[scriptname.bas] for the LOGON_CMD in wwiv.ini
+  (eventually many other commands will allow you to specify a
+  script to run instead of an external command).</li>
+		<li> subs.json is now the source of truth for subs data (before, subs.dat
+  and subs.xtr were both used as source of truth, although subs.json has
+  been written on save since 5.2)</li>
+		<li>Removed internal menueditor, use the one in init if needed.</li>
+		<li> handling type main_type_sub_list is implemented now, so receiving
+  SUBS.LST from netup for WWIVnet type networks should work in net53.</li>
+		<li> Removed internal usereditor, use the one in init if needed.</li>
+		<li> WWIVd now exports connection information to HTTP as a JSON object.
+  on the http port defined on init, URL: "/status"<br/>
+  Example output:</br/>
+    { "status": [ { "num_instances" : 3 }, { "used_instances": 0 } ] }</li>
+		<li> Added %I when running commands to point to the path to the temporary
+  			directory.</li>
+		<li>BinkP Fix (thanks apam) where all FTN addresses were not being presented
+			  when answering.</li>
+		<li>CMake is now the source-of-truth build system on all platforms.
+		  to build use "cmake --build . -- -j8" and not make or msbuild
+		  anymore.</li>
+		</ul>
+        <hr/>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-md-11 center-block">
