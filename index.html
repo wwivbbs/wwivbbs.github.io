@@ -50,7 +50,7 @@
 <h1 class="text-center">WWIV BBS Software</h1>
   <div class="container-fluid text-center">
     <a class="btn btn-primary btn-lg"
-       href="https://github.com/wwivbbs/wwiv/releases/tag/wwiv_5.3.1"
+       href="https://github.com/wwivbbs/wwiv/releases/tag/wwiv_5.4.0"
        role="button">Download</a>
     <a class="btn btn-secondary btn-lg" href="http://docs.wwivbbs.org/en/latest" role="button">Documentation</a>
   </div>
@@ -89,9 +89,10 @@
       </h3>
 
       <p> 
-        <a href="https://github.com/wwivbbs/wwiv/releases/tag/wwiv_5.3.1"> WWIV 5.3.1 (stable) </a><br/>
-        <a href="https://build.wwivbbs.org/jenkins/job/wwiv/label=windows/lastSuccessfulBuild/artifact/"> WWIV 5.4
+        <a href="https://github.com/wwivbbs/wwiv/releases/tag/wwiv_5.4.0"> WWIV 5.4.0 (stable) </a><br/>
+        <a href="https://build.wwivbbs.org/jenkins/job/wwiv/label=win-x86/lastSuccessfulBuild/artifact/"> WWIV 5.5
         (unstable - next release) </a><br/>
+        <a href="https://github.com/wwivbbs/wwiv/releases/tag/wwiv_5.3.1"> WWIV 5.3.1 (archived) </a><br/>
         <a href="https://github.com/wwivbbs/wwiv/releases/tag/wwiv_5.2.0"> WWIV 5.2 (archived) </a><br/>
         <a href="https://github.com/wwivbbs/wwiv/releases/tag/wwiv_5.1.0"> WWIV 5.1 (archived) </a><br/>
         <a href="https://build.wwivbbs.org/jenkins/job/wwiv_5.0.0/label=windows/lastSuccessfulBuild/artifact/"> WWIV 5.0 (archived) </a><br/>
@@ -105,7 +106,8 @@
     <div class="text-center col-sm-6">
       <h3><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Links</h3>
       <ul>
-        <a href="http://docs.wwivbbs.org/en/latest">WWIV 5.3.1 Documentation</a><br/>
+        <a href="http://docs.wwivbbs.org/en/latest">WWIV 5.4 Documentation</a><br/>
+        <a href="http://docs.wwivbbs.org/en/wwiv53">WWIV 5.3 Documentation</a><br/>
         <a href="http://docs.wwivbbs.org/en/wwiv52">WWIV 5.2 Documentation</a><br/>
         <a href="http://docs.wwivbbs.org/en/wwiv51">WWIV 5.1 Documentation</a><br/>
         <a href="http://docs.wwivbbs.org/en/wwiv500">WWIV 5.0 Documentation</a><br/>
@@ -129,6 +131,51 @@
     </div>
   </div>
 --->
+
+    <div class="row">
+      <div class="col-md-11 center-block">
+      <h3>December 1, 2019</h3>
+      <hr/>
+      <strong>WWIV 5.4 is now Generally Available.</strong>
+      <br/>&nbsp;<br/>
+        New features include:
+       <ul>
+<li>wwivconfig now has an option under paths for Logs directory. If set, it'll be the default location for all binary *.log files.  If the <code>WWIV_LOG_DIR</code> environment variable or <code>--logdir</code> command line argument are specified, they will override this setting from wwivconfig.  Like  all other paths, if specified as a relative path, it is relative to the bbsdir (aka <code>WWIV_DIR</code> or <code>--bbsdir</code>).</li>
+<li>Added <code>--log_startup</code> to all binaries. This will enable the start/stop default logging with command line arguments displayed.  This is now not the default behavior anymore.  If you want it displayed, either pass <code>--log_startup</code> or edit Logger::Init in core/log.cpp and set  log_startup_ to true.</li>
+<li>Created chains.json to replace chains.dat and chains.reg.</li>
+<li>windows-wwiv-update has been removed from the distribution.  Had lots of complaints of it not working for people, and may reappear in the   future as a native C++ implementation.</li>
+<li>wwivserver.exe has been removed from the distribution.  wwivd is the replacement. It's source has been moved it it's own repo.</li>
+<li>WINS has been removed from the distribution. It hasn't changed in several years and it's source has been moved it it's own repo.  If new changes are made, it'll get it's own downloadable build  for win32, or instructions for how to compile it yourself  will be created.</li>
+<li>Added options --save and --backup to wwivutil net contact</li>
+<li>Added <code>wwivutil net subscribers</code> command.</li>
+<li>Added <code>wwivutil fido subscribers</code> command</li>
+<li>Improved FTN duplicate checking to check for either the MSGID (if available) or a hash of the message header.</li>
+<li>Fixed STDIO based editors not working in Linux, and added an option to wwivconfig to enable it (the option is visible for all platforms, but currently only works on Linux/Unix)</li>
+<li>wwivconfig can now edit callout.net from the networks menu just like it can edit fido_callouts.json with a GUI editor.</li>
+<li>You can now send a FTN email using the form: <code>"username (net/node)"</code> or <code>"username (zone:net/node)"</code>. Using the fake ftn node number is no longer needed.</li>
+<li>Added <code>--skip_delete</code> to most network commands, it'll backup vs deleting packets that it's processed.</li>
+<li>net.ini is now read for default values for most command line flags for all network? commands.  I.e. you can add<br>
+skip_net = true under <code>[networkb]</code> and it'll be the same  as added <code>--skip_net=true </code>on the command line</li>
+<li>wwivd now handles all of the callouts instead of bbs's WFC screen.  Make sure you turn it on in wwivconfig to allow it to happen</li>
+<li>wwivd can now execute wwiv's beginday event if specified to do so in wwivconfig</li>
+<li>added --quiet flag to wwivconfig to make it not output anything unless it's doing something (nice to keep the<br>
+wfc from displaying lots of useless info)</li>
+<li>wwivd autoblocking now works (it was listed in wwivconfig back in 5.3, but never enabled in wwivd, fixed that)</li>
+<li>networkc now has a <code>--process_instance=XX</code> flag that's used when the bbs uses it to cleanup the net.</li>
+<li>Removed the '-k' flag from bbs, please use wwivutil to  pack the message bases now</li>
+<li>added "wwivutil print" command to print ansi files using the same  ansi interpretation code in the bbs</li>
+<li>If an environment variable <code>WWIV_DIR</code> exists, use that  to locate config.dat unless <code>--bbsdir</code> is specified on  the commandline.  This works in every wwiv binary.</li>
+<li>added <code>wwivutil net list</code> and <code>wwivutil messages</code> areas</li>
+<li>Add --configdir to all binaries</li>
+<li>Add --bindir to all binaries</li>
+<li>add --logdir to all binaries</li>
+<li>Add --quiet to all network binaries</li>
+      </ul>
+          <hr/>
+      </div>
+    </div>
+
+
    <div class="row">
     <div class="col-md-11 center-block">
     	<h3>July 9, 2018</h3>
